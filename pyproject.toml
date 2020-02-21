@@ -1,17 +1,5 @@
 [build-system]
-requires = [
-    "flit_core >=2,<3",
-    "boost-histogram ==0.6.2"
-]
-build-backend = "flit_core.buildapi"
+requires = ["wheel", "setuptools>=42", "setuptools_scm[toml]>=3.4"]
 
-[tool.flit.metadata]
-module = "hist"
-author = "Henry Schreiner"
-author-email = "henryfs@princeton.edu"
-home-page = "https://iscinumpy.gitlab.io"
-classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3 :: Only"
-]
-
+[tool.setuptools_scm]
+write_to = "src/hist/version.py"
