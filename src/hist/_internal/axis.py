@@ -8,14 +8,14 @@ class Regular(bha.Regular):
         start,
         stop,
         *,
-        title=None,
+        name=None,
         underflow=True,
         overflow=True,
         growth=False,
         circular=False,
         transform=None
     ):
-        metadata = dict(title=title)
+        metadata = dict(name=name)
         super().__init__(
             bins,
             start,
@@ -29,12 +29,12 @@ class Regular(bha.Regular):
         )
 
     @property
-    def title(self):
-        return self.metadata["title"]
+    def name(self):
+        return self.metadata["name"]
 
-    @title.setter
-    def title(self, value):
-        self.metadata["title"] = value
+    @name.setter
+    def name(self, value):
+        self.metadata["name"] = value
 
 
 class Variable(bha.Variable):
