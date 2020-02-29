@@ -89,7 +89,7 @@ valid_only = h[:, :, bh.loc(True)] # Passing True directly happens to work here 
 valid_only = h[{2:bh.loc(True)}]   # Alternate way to do the same thing ### BROKEN in 0.6.2
 
 valid_and_invalid = h[:, :, ::bh.sum]                 # All (valid and invalid)
-valid_and_invalid = h[{2:slice(None, None, bh.sum}]   # Alternate way to do the same thing
+valid_and_invalid = h[{2:slice(None, None, bh.sum)}]   # Alternate way to do the same thing
 ```
 
 > Note: The metadata here is a bit more complex than you might normally make it
