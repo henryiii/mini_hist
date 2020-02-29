@@ -131,13 +131,17 @@ Let's call the method `pull_plot` (eventually, we might call it `plot.pull`, to
 be like Pandas), but this is fine for now). Let's propose a possible interface:
 
 ```python
+from hist import NamedHist, axis
+
 data = np.random.normal(size=1_000)
-h = bh.Histogram
-    bh.axis.Regular(50, -3, 3, title="data [units]"),
+h = Hist
+    axis.Regular(50, -3, 3, title="data [units]"),
 )
 h.fill(data)
+
 def pdf(x):
     return 1/np.sqrt(2*np.pi) * np.exp(-.5*x**2)
+    
 ax1, ax2 = h.pull_plot(pdf)
 ```
 
