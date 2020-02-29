@@ -86,8 +86,10 @@ h = bh.Histogram(
 h.fill(x, y, valid)
 
 valid_only = h[:, :, bh.loc(True)] # Passing True directly happens to work here as well
-valid_only = h[{2:bh.loc(True)}]   # Alternate way to do the same thing
+valid_only = h[{2:bh.loc(True)}]   # Alternate way to do the same thing ### BROKEN in 0.6.2
 
+valid_and_invalid = h[:, :, ::bh.sum]                 # All (valid and invalid)
+valid_and_invalid = h[{2:slice(None, None, bh.sum}]   # Alternate way to do the same thing
 ```
 
 > Note: The metadata here is a bit more complex than you might normally make it
@@ -106,7 +108,7 @@ h = NamedHist(
 
 h.fill(x=x, y=y, valid=valid)
 
-valid_only = h[{"valid": bh.loc(True)}]
+valid_and_invalid = h[{"valid": slice(None, None, bh.sum)}]
 ```
 
 So, for this task, you should make sure `NamedHist` a) requires name to be set on
