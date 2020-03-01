@@ -135,7 +135,7 @@ be like Pandas), but this is fine for now). Let's propose a possible interface:
 from hist import NamedHist, axis
 
 data = np.random.normal(size=1_000)
-h = Hist
+h = Hist(
     axis.Regular(50, -3, 3, title="data [units]"),
 )
 h.fill(data)
