@@ -87,7 +87,7 @@ h = bh.Histogram(
 h.fill(x, y, valid)
 
 valid_only = h[:, :, bh.loc(True)] # Passing True directly happens to work here as well
-valid_only = h[{2:bh.loc(True)}]   # Alternate way to do the same thing ### BROKEN in 0.6.2
+valid_only = h[{2:bh.loc(True)}]   # Alternate way to do the same thing ### BROKEN in 0.6.2, fixed in 0.7.0
 
 valid_and_invalid = h[:, :, ::bh.sum]                 # All (valid and invalid)
 valid_and_invalid = h[{2:slice(None, None, bh.sum)}]   # Alternate way to do the same thing
